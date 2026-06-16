@@ -3,8 +3,7 @@
 __pycache__/
 *.py[codz]
 *$py.class
-alembic/
-alembic.ini
+
 # C extensions
 *.so
 
