@@ -14,8 +14,8 @@ class MenuItem(Base):
 
 	date: Mapped[Date]		= mapped_column(ForeignKey("menus.date"), primary_key=True)
 	dish_id: Mapped[int]	= mapped_column(ForeignKey("dishes.id"), primary_key=True)
-	grouped_by: Mapped[str]	= mapped_column(String(64), nullable=False)
-	sorted_by: Mapped[str]	= mapped_column(String(64), nullable=False)
+	group_index: Mapped[int]	= mapped_column(Integer, nullable=False)
+	sort_index: Mapped[int]	= mapped_column(Integer, nullable=False)
 
 	menu: Mapped[list["Menu"]]	= relationship("Menu", back_populates="items")
 	dish: Mapped["Dish"]		= relationship("Dish", back_populates="menu_items")
